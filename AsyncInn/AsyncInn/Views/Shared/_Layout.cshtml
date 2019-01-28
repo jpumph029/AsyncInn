@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<head>
+    <link href="~/StyleSheet.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <h1>Async Inn</h1>
+
+    <header>
+        <nav class="navbar">
+            <a href="/" class="nav">Home</a>
+            <a href="/Hotels" class="nav">Create Hotel</a>
+            <a href="/Rooms" class="nav">Create Room</a>
+            <a href="/Amenities" class="nav">Create Amenities</a>
+            <a href="/HotelRooms" class="nav">Hotel Rooms</a>
+            <a href="/RoomAmenities" class="nav">Room Amenities</a>
+        </nav>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+</body>

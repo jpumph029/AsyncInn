@@ -81,9 +81,5 @@ namespace AsyncInn.Controllers
             _amenities.CreateAmenities(amenities);
             return RedirectToAction("Index");
         }
-
-
-
-
     }
 }

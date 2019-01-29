@@ -36,6 +36,7 @@ namespace AsyncInn.Models.Services
         public void UpdateRoom(Room room)
         {
             _context.Rooms.Update(room);
+            _context.SaveChanges();
         }
 
         public void DeleteRoom(int id)

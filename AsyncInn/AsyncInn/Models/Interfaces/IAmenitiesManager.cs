@@ -7,7 +7,15 @@ namespace AsyncInn.Models.Interfaces
 {
     interface IAmenitiesManager
     {
+        Task CreateAmenities(Amenities amenities);
 
+        Task<Amenities> GetAmenities(int id);
+
+        Task<IEnumerable<Amenities>> GetAmenities();
+
+        void UpdateAmenities(Amenities amenities);
+
+        void DeleteAmenities(int ID);
 
 
     }

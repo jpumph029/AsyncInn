@@ -17,20 +17,20 @@ namespace AsyncInn.Models.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<Amenities>> GetAmenities()
-        {
-            return await _context.Amenities.ToListAsync();
-        }
-
         public async Task CreateAmenities(Amenities amenities)
         {
             _context.Amenities.Add(amenities);
             await _context.SaveChangesAsync();
         }
 
+        public async Task<IEnumerable<Amenities>> GetAmenities()
+        {
+            return await _context.Amenities.ToListAsync();
+        }
+
         public async Task<Amenities> GetAmenities(int id)
         {
-            return await _context.Amenities.FirstOrDefaultAsync(student => student.ID == id);
+            return await _context.Amenities.FirstOrDefaultAsync(amenitites => amenitites.ID == id);
         }
 
         public void UpdateAmenities(Amenities amenities)

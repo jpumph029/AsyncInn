@@ -7,5 +7,15 @@ namespace AsyncInn.Models.Interfaces
 {
     interface IHotelManager
     {
+        Task CreateHotel(Hotel hotel);
+
+        Task<Hotel> GetHotel(int ID);
+
+        Task<IEnumerable<Hotel>> GetHotel();
+
+        void UpdateHotel(Hotel hotel);
+
+        void DeleteHotel(int ID);
+
     }
 }

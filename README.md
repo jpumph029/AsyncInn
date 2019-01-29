@@ -2,7 +2,12 @@
 initial ASP.NET Core MVC application for a Hotel management system.
 # DB diagram
 ![](Assets/SchemaAsyncInn.png)
-
+Create Hotel
+![](Assets/CreateHotel.png)
+Create Room
+![](Assets/CreateRoom.png)
+View Amenities
+![](Assets/ViewAmenities.png)
 Home Page to greet the Hotel Admin. This page will also serve as a dashboard for the other locations of the site.</br>
 Hotels page that will allow the admin to create and edit new or existing hotels</br>
 Rooms page where the admin will be able to create or edit new or existing rooms</br>

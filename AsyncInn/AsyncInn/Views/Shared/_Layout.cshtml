@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="~/StyleSheet.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>AsyncInn</title>
+</head>
+<body>
+    <header>
+        <h1>Async Inn</h1>
+        <nav class="navbar">
+            <a href="/" class="nav">Home</a>
+            <a href="/Hotels" class="nav">Create Hotel</a>
+            <a href="/Rooms" class="nav">Create Room</a>
+            <a href="/Amenities" class="nav">Create Amenities</a>
+            <a href="/HotelRooms" class="nav">Hotel Rooms</a>
+            <a href="/RoomAmenities" class="nav">Room Amenities</a>
+        </nav>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+   
+</body>

@@ -38,6 +38,7 @@ namespace AsyncInn.Controllers
         }
         [HttpPost]
         [ActionName("Delete")]
+        []
         public IActionResult Delete(int id)
         {
 

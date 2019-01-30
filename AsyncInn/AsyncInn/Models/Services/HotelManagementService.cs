@@ -28,7 +28,7 @@ namespace AsyncInn.Models.Services
             return await _context.Hotels.ToListAsync();
         }
 
-        public async Task<Hotel> GetHotel(int id)
+        public async Task<Hotel> GetHotel(int? id)
         {
             return await _context.Hotels.FirstOrDefaultAsync(hotel => hotel.ID == id);
         }

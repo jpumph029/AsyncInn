@@ -38,7 +38,6 @@ namespace AsyncInn.Controllers
         }
         [HttpPost]
         [ActionName("Delete")]
-        []
         public IActionResult Delete(int id)
         {
 
@@ -77,10 +76,16 @@ namespace AsyncInn.Controllers
         {
             return View();
         }
-        public IActionResult ConfirmCreate(Amenities amenities)
+        [HttpPost]
+        [ActionName("Create")]
+        public async Task<IActionResult> ConfirmCreate(Amenities amenities)
         {
-            _amenities.CreateAmenities(amenities);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                await _amenities.CreateAmenities(amenities);
+                return RedirectToAction("Index");
+            }
+            return View(amenities);
         }
     }
 }

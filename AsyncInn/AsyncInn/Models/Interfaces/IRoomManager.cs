@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace AsyncInn.Models.Interfaces
 {
-    interface IRoomManager
+    public interface IRoomManager
     {
 
         Task CreateRoom(Room room);
 
-        Task<Room> GetRoom(int ID);
+        Task<Room> GetRoom(int? ID);
 
         Task<IEnumerable<Room>> GetRoom();
 

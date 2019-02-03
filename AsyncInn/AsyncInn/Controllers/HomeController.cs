@@ -9,6 +9,7 @@ namespace AsyncInn.Controllers
 {
     public class HomeController : Controller
     {
+        //GET: Ameneries/index
         public IActionResult Index()
         {
             return View();

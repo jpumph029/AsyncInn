@@ -19,12 +19,12 @@ namespace AsyncInn.Controllers
         {
             _rooms = db;
         }
-
+        //GET: Rooms/Index
         public async Task<IActionResult> Index()
         {
             return View(await _rooms.GetRoom());
         }
-
+        //GET:Rooms/Delete/ID
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -35,6 +35,7 @@ namespace AsyncInn.Controllers
 
             return View(await _rooms.GetRoom(id));
         }
+        //POST: Rooms/Delete/ID
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -44,7 +45,7 @@ namespace AsyncInn.Controllers
             _rooms.DeleteRoom(id);
             return RedirectToAction("Index");
         }
-
+        //GET: Rooms/Details/ID
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -54,7 +55,7 @@ namespace AsyncInn.Controllers
 
             return View(await _rooms.GetRoom(id));
         }
-
+        //GET: Rooms/Edit/ID
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -63,6 +64,7 @@ namespace AsyncInn.Controllers
             }
             return View(await _rooms.GetRoom(id));
         }
+        //POST: ROoms/Edit/ID
         [HttpPost]
         [ActionName("Edit")]
         [ValidateAntiForgeryToken]
@@ -71,11 +73,12 @@ namespace AsyncInn.Controllers
             _rooms.UpdateRoom(room);
             return RedirectToAction("Index");
         }
-
+        //GET: Rooms/Create/
         public IActionResult Create()
         {
             return View();
         }
+        //POST: Rooms/Create/room
         [HttpPost]
         [ActionName("Create")]
         public async Task<IActionResult> ConfirmCreate(Room room)

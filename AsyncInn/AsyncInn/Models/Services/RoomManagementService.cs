@@ -16,29 +16,29 @@ namespace AsyncInn.Models.Services
         {
             _context = context;
         }
-
+        //Create
         public async Task CreateRoom(Room room)
         {
             _context.Rooms.Add(room);
             await _context.SaveChangesAsync();
         }
-
+        //Read All
         public async Task<IEnumerable<Room>> GetRoom()
         {
             return await _context.Rooms.ToListAsync();
         }
-
+        //Read
         public async Task<Room> GetRoom(int? id)
         {
             return await _context.Rooms.FirstOrDefaultAsync(hotel => hotel.ID == id);
         }
-
+        //Update    
         public void UpdateRoom(Room room)
         {
             _context.Rooms.Update(room);
             _context.SaveChanges();
         }
-
+        //Delete
         public void DeleteRoom(int id)
         {
             Room room = _context.Rooms.FirstOrDefault(a => a.ID == id);

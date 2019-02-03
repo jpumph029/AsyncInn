@@ -15,17 +15,20 @@ namespace AsyncInn.Controllers
     {
         private IAmenitiesManager _amenities { get; }
 
+        
         public AmenitiesController(IAmenitiesManager db)
         {
             _amenities = db;
         }
 
+        //Get: Amenetites/Index
         public async Task<IActionResult> Index()
         {
             
             return View(await _amenities.GetAmenities());
         }       
         
+        //GEt: Ameneties/Delete
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -36,6 +39,7 @@ namespace AsyncInn.Controllers
             
             return View(await _amenities.GetAmenities(id));
         }
+        //POST: Ameneties/Delete/ID
         [HttpPost]
         [ActionName("Delete")]
         public IActionResult Delete(int id)
@@ -44,7 +48,7 @@ namespace AsyncInn.Controllers
             _amenities.DeleteAmenities(id);
             return RedirectToAction("Index");
         }
-
+        //GET: Ameneties/Details/ID
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -54,7 +58,7 @@ namespace AsyncInn.Controllers
             
             return View(await _amenities.GetAmenities(id));
         }
-
+        //GET: Ameneties/Edit/ID
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -63,6 +67,7 @@ namespace AsyncInn.Controllers
             }
             return View(await _amenities.GetAmenities(id));
         }
+        //POST: Ameneties/Edit/ID
         [HttpPost]
         [ActionName("Edit")]
         public IActionResult ConfirmEdit(Amenities amenities)
@@ -71,11 +76,13 @@ namespace AsyncInn.Controllers
             return RedirectToAction("Index");
         }
 
-
+        //GET: Ameneties/Create
         public IActionResult Create()
         {
             return View();
         }
+
+        //POST: Ameneties/Create/ID
         [HttpPost]
         [ActionName("Create")]
         public async Task<IActionResult> ConfirmCreate(Amenities amenities)

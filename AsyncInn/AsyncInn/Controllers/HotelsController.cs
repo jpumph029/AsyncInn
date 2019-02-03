@@ -20,11 +20,13 @@ namespace AsyncInn.Controllers
             _hotels = db;
         }
 
+        //GET: Hotels/Index
         public async Task<IActionResult> Index()
         {
             return View(await _hotels.GetHotel());
         }
 
+        //GET: Hotels/Delete
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -35,6 +37,7 @@ namespace AsyncInn.Controllers
 
             return View(await _hotels.GetHotel(id));
         }
+        //POST: Hotels/Delete/ID
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -44,7 +47,7 @@ namespace AsyncInn.Controllers
             _hotels.DeleteHotel(id);
             return RedirectToAction("Index");
         }
-
+        //GET: Hotels/Details/ID
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -54,7 +57,7 @@ namespace AsyncInn.Controllers
 
             return View(await _hotels.GetHotel(id));
         }
-
+        //GET: Hotels/Edit/ID
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -63,6 +66,7 @@ namespace AsyncInn.Controllers
             }
             return View(await _hotels.GetHotel(id));
         }
+        //POST: Hotels/Edit/Hotel
         [HttpPost]
         [ActionName("Edit")]
         [ValidateAntiForgeryToken]
@@ -71,11 +75,12 @@ namespace AsyncInn.Controllers
             _hotels.UpdateHotel(hotel);
             return RedirectToAction("Index");
         }
-
+        //GET: Hotels/Create
         public IActionResult Create()
         {
             return View();
         }
+        //POST: Hotels/Create/hotel
         [HttpPost]
         [ActionName("Create")]
         public async Task<IActionResult> ConfirmCreate(Hotel hotel)

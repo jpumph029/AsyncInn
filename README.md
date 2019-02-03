@@ -1,5 +1,6 @@
 # AsyncInn
 initial ASP.NET Core MVC application for a Hotel management system.
+Technologies used: ASP.Net Core MVC, LINQ, System.IO Enitity framework, Dependency Injection.
 # DB diagram
 ![](Assets/SchemaAsyncInn.png)
 Create Hotel
